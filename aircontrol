@@ -13,7 +13,7 @@ set _isSierra to (system attribute "sys1") = 10 and (system attribute "sys2") = 
 tell application "System Events"
     tell process "SystemUIServer"
         if _isElCapitan then
-            tell (menu bar item 1 of menu bar 1 whose description contains "Displays Menu")
+            tell (menu bar item 1 of menu bar 1 whose description contains "ディスプレイメニュー")
                 select
                     delay 0.1
                     key code 125 using command down
@@ -26,7 +26,7 @@ tell application "System Events"
             else
                 set tvname to $tvname
             end if
-            click (menu bar item 1 of menu bar 1 whose description contains "Displays")
+            click (menu bar item 1 of menu bar 1 whose description contains "ディスプレイ")
             set mymenu to result
             delay 0.5
             repeat with myitem in (menu items of menu of mymenu)
@@ -37,7 +37,7 @@ tell application "System Events"
                 end if
             end repeat
         else
-            click (menu bar item 1 of menu bar 1 whose description contains "Displays")
+            click (menu bar item 1 of menu bar 1 whose description contains "ディスプレイ")
             click menu item $tvname of menu 1 of result
         end if
     end tell
